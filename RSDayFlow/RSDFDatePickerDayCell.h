@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface RSDFDatePickerDayCell : UICollectionViewCell
 
+@property (nonatomic, getter = isMinDate) BOOL minDate;
+@property (nonatomic, getter = isMaxDate) BOOL maxDate;
 ///-------------------------
 /// @name Accessing Subviews
 ///-------------------------
