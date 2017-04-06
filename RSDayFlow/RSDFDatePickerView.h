@@ -243,6 +243,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)datePickerView:(RSDFDatePickerView *)view didSelectDate:(NSDate *)date;
 
+- (void)datePickerView:(RSDFDatePickerView *)view didSelectMinDate:(nullable NSDate *)minDate andMaxDate:(nullable NSDate *)maxDate;
 @end
 
 /**

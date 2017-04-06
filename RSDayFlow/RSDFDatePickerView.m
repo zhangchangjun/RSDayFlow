@@ -335,7 +335,9 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
 }
 
 - (void)selectedMinDate: (NSDate *)minDate withMaxDate: (NSDate *)maxDate selected:(Boolean)selected {
-    
+    if ([self.delegate respondsToSelector:@selector(datePickerView:didSelectMinDate:andMaxDate:)]) {
+        [self.delegate datePickerView:self didSelectMinDate:minDate andMaxDate:maxDate];
+    }
     NSLog(@"min: %@, max: %@",minDate, maxDate);
     if (minDate == nil && maxDate == nil) {
         return;
