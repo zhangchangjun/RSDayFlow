@@ -787,6 +787,17 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
         cell.accessibilityLabel = [NSDateFormatter localizedStringFromDate:cellDate dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterNoStyle];
     }
     
+    if ([cellDate compare:_minSelectedDate] == NSOrderedSame) {
+        cell.minDate = YES;
+        cell.maxDate = NO;
+    } else if ([cellDate compare:_maxSelectedDate] == NSOrderedSame) {
+        cell.maxDate = YES;
+        cell.minDate = NO;
+    } else {
+        cell.maxDate = NO;
+        cell.minDate = NO;
+    }
+    
     [cell setNeedsDisplay];
     
     return cell;
