@@ -836,20 +836,17 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
                 monthString = [dateFormatter monthSymbols][date.month - 1];
                 break;
         }
-        
-        NSString *str1 = [NSString stringWithFormat:@"%tu",date.year];
-        NSString *str2 = @"年";
-        NSString *str3 = [NSString stringWithFormat:@"%tu",date.month];
-        NSString *str4 = @"月";
-        NSString *str = [NSString stringWithFormat:@"%@%@%@%@", str1, str2, str3, str4];
+        NSString *str1 = [NSString stringWithFormat:@"%tu年 ",date.year];
+        NSString *str2 = [NSString stringWithFormat:@"%tu",date.month];
+        NSString *str3 = @"月";
+        NSString *str = [NSString stringWithFormat:@"%@%@%@", str1, str2, str3];
         //        monthHeader.dateLabel.text = [NSString stringWithFormat:@"%tu年%tu月", date.year,date.month];
         NSMutableAttributedString *mutableStr = [[NSMutableAttributedString alloc] initWithString:str];
         NSDictionary *dict = @{NSFontAttributeName: [UIFont systemFontOfSize:24]};
-        [mutableStr addAttributes:dict range:NSMakeRange(0, str1.length)];
-        [mutableStr addAttributes:dict range:NSMakeRange(str1.length + str2.length, str3.length)];
+        [mutableStr addAttributes:dict range:NSMakeRange(str1.length, str2.length)];
         
         monthHeader.dateLabel.attributedText = mutableStr;
-        
+        monthHeader.dateLabel.textAlignment = NSTextAlignmentRight;
         
         RSDFDatePickerDate today = [self pickerDateFromDate:_today];
         if ( (today.month == date.month) && (today.year == date.year) ) {
