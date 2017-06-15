@@ -356,7 +356,10 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
         }
 
         RSDFDatePickerDayCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPathForSelectedDate];
-        if ([tempDate compare:minDate] == NSOrderedSame) {
+        if ([tempDate compare:minDate] == NSOrderedSame && [tempDate compare:maxDate] == NSOrderedSame && _maxSelectedDate != nil) {
+            selectedCell.minDate = YES;
+            selectedCell.maxDate = YES;
+        } else if ([tempDate compare:minDate] == NSOrderedSame) {
             selectedCell.minDate = YES;
             selectedCell.maxDate = NO;
         } else if ([tempDate compare:maxDate] == NSOrderedSame) {
@@ -787,7 +790,10 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
         cell.accessibilityLabel = [NSDateFormatter localizedStringFromDate:cellDate dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterNoStyle];
     }
     
-    if ([cellDate compare:_minSelectedDate] == NSOrderedSame) {
+    if ([cellDate compare:_minSelectedDate] == NSOrderedSame && [cellDate compare:_maxSelectedDate] == NSOrderedSame && _maxSelectedDate != nil) {
+        cell.minDate = YES;
+        cell.maxDate = YES;
+    } else if ([cellDate compare:_minSelectedDate] == NSOrderedSame) {
         cell.minDate = YES;
         cell.maxDate = NO;
     } else if ([cellDate compare:_maxSelectedDate] == NSOrderedSame) {
