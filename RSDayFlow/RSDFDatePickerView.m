@@ -387,7 +387,7 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
 
 - (void)selectDate:(NSDate *)date
 {
-    
+    [self.collectionView reloadData];
     if (_minSelectedDate == nil && _maxSelectedDate == nil) {
         _minSelectedDate = date;
     } else if (_minSelectedDate != nil && _maxSelectedDate == nil) {
