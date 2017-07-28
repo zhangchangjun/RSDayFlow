@@ -344,6 +344,10 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
     } else if (minDate != nil && maxDate == nil) {
         maxDate = minDate;
     }
+    
+    if ([maxDate compare:_fromDate]  == NSOrderedAscending || [minDate compare:_toDate] == NSOrderedDescending) {
+        return;
+    }
 
     NSDate *tempDate = minDate;
     while (!([tempDate compare:maxDate] == NSOrderedDescending)) {
