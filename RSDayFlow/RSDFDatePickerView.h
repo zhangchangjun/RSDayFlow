@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface RSDFDatePickerView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+- (void)selectedMinDate: (NSDate *)minDate withMaxDate: (NSDate *)maxDate selected:(Boolean)selected;
+
 /**
  Designated initializer. Initializes and returns a newly allocated view object with the specified frame rectangle and the specified calendar.
  
