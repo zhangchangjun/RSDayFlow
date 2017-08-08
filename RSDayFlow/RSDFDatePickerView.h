@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface RSDFDatePickerView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic,strong, nullable) NSDate *maxSelectedDate;
+
 - (void)selectedMinDate: (NSDate *)minDate withMaxDate: (NSDate *)maxDate selected:(Boolean)selected;
 
 /**
