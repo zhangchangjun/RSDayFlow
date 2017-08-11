@@ -602,7 +602,7 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
 
 - (NSUInteger)reorderedWeekday:(NSUInteger)weekday
 {
-    NSInteger ordered = weekday - self.calendar.firstWeekday - 1;
+    NSInteger ordered = weekday - self.calendar.firstWeekday;
     if (ordered < 0) {
         ordered = self.daysInWeek + ordered;
     }

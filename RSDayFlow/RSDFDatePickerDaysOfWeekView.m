@@ -97,9 +97,9 @@
 - (void)commonInitializer
 {
     self.backgroundColor = [self selfBackgroundColor];
-    
+    self.calendar.firstWeekday = 2;
     self.daysInWeek = self.calendar.rsdf_daysInWeek;
-    self.originalIndexOfFirstWeekdaySymbol = self.calendar.firstWeekday ;
+    self.originalIndexOfFirstWeekdaySymbol = self.calendar.firstWeekday - 1;
     self.originalIndexOfSaturdaySymbol = self.calendar.rsdf_saturdayIndex - 1;
     self.originalIndexOfSundaySymbol = self.calendar.rsdf_sundayIndex - 1;
     
