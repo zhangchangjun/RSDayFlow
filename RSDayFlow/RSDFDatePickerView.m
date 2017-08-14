@@ -141,6 +141,7 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
     if (!_calendar) {
         _calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         _calendar.locale = [NSLocale currentLocale];
+        _calendar.firstWeekday = 2;
     }
     return _calendar;
 }

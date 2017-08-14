@@ -88,6 +88,7 @@
     if (!_calendar) {
         _calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         _calendar.locale = [NSLocale currentLocale];
+        _calendar.firstWeekday = 2;
     }
     return _calendar;
 }
@@ -97,7 +98,6 @@
 - (void)commonInitializer
 {
     self.backgroundColor = [self selfBackgroundColor];
-    self.calendar.firstWeekday = 2;
     self.daysInWeek = self.calendar.rsdf_daysInWeek;
     self.originalIndexOfFirstWeekdaySymbol = self.calendar.firstWeekday - 1;
     self.originalIndexOfSaturdaySymbol = self.calendar.rsdf_saturdayIndex - 1;
