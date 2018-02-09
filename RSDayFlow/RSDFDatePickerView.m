@@ -613,7 +613,7 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
 
 - (void)restoreSelection
 {
-    [self selectedMinDate:_minSelectedDate withMaxDate:_selectedDate selected:YES];
+    [self selectedMinDate:_minSelectedDate withMaxDate:_maxSelectedDate selected:YES];
 //    if (self.selectedDate &&
 //        [self.selectedDate compare:self.fromDate] != NSOrderedAscending &&
 //        [self.selectedDate compare:self.toDate] == NSOrderedAscending) {
